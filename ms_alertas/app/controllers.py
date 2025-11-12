@@ -10,7 +10,7 @@ client = MongoClient(MONGO_URI)
 db = client["sorora"]
 collection = db["alertas"]
 
-NOTIFICACIONES_URL = os.getenv("NOTIFICACIONES_URL", "http://localhost:5000/notificaciones/enviar")
+NOTIFICACIONES_URL = os.getenv("NOTIFICACIONES_URL", "http://api-web-ii.vercel.app/notificaciones/enviar")
 
 def crear_alerta(alerta, background_tasks):
     nueva_alerta = {
@@ -35,6 +35,6 @@ def crear_alerta(alerta, background_tasks):
 def enviar_notificacion(payload):
     import requests
     try:
-        requests.post("http://localhost:5000/notificaciones/enviar", json=payload, timeout=5)
+        requests.post("http://api-web-ii.vercel.app/notificaciones/enviar", json=payload, timeout=5)
     except Exception as e:
         print(f"Error al enviar notificación: {e}")
