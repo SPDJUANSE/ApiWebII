@@ -6,7 +6,7 @@ from bson import ObjectId
 
 # Conexión a Mongo (ajusta tu URI si ya la tienes global)
 client = MongoClient("mongodb+srv://admin:1234@cluster0.ts8dp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-db = client["sorora_db"]
+db = client["Sorora"]
 reportes_collection = db["reportes"]
 
 def crear_reporte(reporte):

@@ -7,7 +7,7 @@ from fastapi import HTTPException
 
 MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://admin:1234@cluster0.ts8dp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 client = MongoClient(MONGO_URI)
-db = client["sorora"]
+db = client["Sorora"]
 collection = db["alertas"]
 
 NOTIFICACIONES_URL = os.getenv("NOTIFICACIONES_URL", "http://api-web-ii.vercel.app/notificaciones/enviar")
