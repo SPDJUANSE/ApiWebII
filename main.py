@@ -32,6 +32,13 @@ app = FastAPI(
     redoc_url="/api/redoc",
 )
 
+@app.middleware("http")
+async def permitir_todo(request, call_next):
+    # Este middleware omite cualquier chequeo de autenticación
+    # y deja pasar todas las solicitudes sin validación
+    response = await call_next(request)
+    return response
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], 
