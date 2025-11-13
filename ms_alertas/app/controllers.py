@@ -5,7 +5,7 @@ import requests
 
 from fastapi import HTTPException
 
-MONGO_URI = os.getenv("MONGO_URI", "mongodb://mongodb:27017/sorora")
+MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://admin:1234@cluster0.ts8dp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 client = MongoClient(MONGO_URI)
 db = client["sorora"]
 collection = db["alertas"]

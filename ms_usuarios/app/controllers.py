@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from fastapi import HTTPException
 import os
 
-client = MongoClient(os.getenv("MONGO_URI", "mongodb://localhost:27017/"))
+client = MongoClient(os.getenv("MONGO_URI", "mongodb+srv://admin:1234@cluster0.ts8dp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"))
 db = client[os.getenv("MONGO_DB", "sorora")]
 usuarios = db["usuarios"]
 

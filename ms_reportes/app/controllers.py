@@ -5,7 +5,7 @@ from pymongo import MongoClient
 from bson import ObjectId
 
 # Conexión a Mongo (ajusta tu URI si ya la tienes global)
-client = MongoClient("mongodb://sorora-mongodb:27017")
+client = MongoClient("mongodb+srv://admin:1234@cluster0.ts8dp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 db = client["sorora_db"]
 reportes_collection = db["reportes"]
 
